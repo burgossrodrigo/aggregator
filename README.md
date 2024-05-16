@@ -1,12 +1,12 @@
-### Integrating 0x api with Golang!
+## Integrating 0x api with Golang!
 
-#### /zerox/sources/:chain
+### GET /zerox/sources/:chain
 
 This route allow the user to retrieve the protocols 0x will be interacting according to the chain name.
 
 ```curl
 
-curl http://localhost:8080/zerox/
+curl http://localhost:8080/zerox/sources
 
 ```
 
@@ -14,7 +14,7 @@ curl http://localhost:8080/zerox/
 {"records":["MultiHop","Uniswap_V3"]}
 ```
 
-#### /zerox/price/:chain/:sellToken/:buyToken:sellAmount
+### GET /zerox/price/:chain/:sellToken/:buyToken:sellAmount
 
 This route allow the user to retrieve from 0x token price along with a couple of data.
 
@@ -129,7 +129,7 @@ http://localhost:8080/zerox/price/ethereum/0xdAC17F958D2ee523a2206206994597C13D8
 }
 ```
 
-#### /zerox/price/:chain/:sellToken/:buyToken/:sellAmount/:takerAddress/:feeRecipient/:feePercentage
+### GET /zerox/price/:chain/:sellToken/:buyToken/:sellAmount/:takerAddress/:feeRecipient/:feePercentage
 
 This routes returns raw unsigned tx data to be signed from your preferable blockchain client.
 Remember that the `takerAddress` needs to give allowance to 0x route first!
